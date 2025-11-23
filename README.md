@@ -1,10 +1,13 @@
+```{bash}
 chmod +x setup-kotlin.sh
 chmod +x setup-kotlin.expect
 
 ./setup-kotlin.expect meu-projeto
+```
 
 
 
+```{bash}
 cat > ~/.local/share/applications/snow.desktop << EOF
 [Desktop Entry]
 Version=1.0
@@ -17,6 +20,9 @@ Terminal=false
 Categories=Development;
 Path=/workspace/obs/kiko/snow/
 EOF
+```
 
+```{bash}
 chmod +x ~/.local/share/applications/snow.desktop
+```
 
