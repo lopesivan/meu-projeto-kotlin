@@ -18,6 +18,10 @@ gradle init \
     --no-split-project \
     --java-version 17
 
+tree -L 3 -I 'gradle|build' 2>/dev/null ||
+    find . -type f -not -path '*/gradle/*' -not -path '*/build/*' |
+    head -20
+
 echo "✓ Projeto criado!"
 
 pkill java
