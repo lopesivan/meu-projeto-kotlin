@@ -1,0 +1,22 @@
+#!/usr/bin/expect -f
+set timeout -1
+
+# script bash que você já tem
+set script "./setup-kotlin.sh"
+
+if { $argc > 0 } {
+    set project_name [lindex $argv 0]
+} else {
+    set project_name "myapp"
+}
+
+spawn $script $project_name
+
+expect {
+    -re {Generate build using new APIs and behavior.*\[yes, no\]} {
+        send "yes\r"
+        exp_continue
+    }
+    eof
+}
+
